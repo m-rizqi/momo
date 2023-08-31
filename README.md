@@ -3,5 +3,5 @@ Momo: Pomodoro Guide App. An Application to help you stay motivated to do tasks 
 
 Kelompok 9
 Ketua Kelompok:
-Anggota 1:
+Anggota 1: Nathan Praja Kusuma (21/473742/TK/52225)
 Anggota 2:
