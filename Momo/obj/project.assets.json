@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\HUAWEI\\.nuget\\packages\\": {}
+    "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\college\\5th semester\\Momo\\Momo\\Momo.csproj",
+      "projectUniqueName": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
       "projectName": "Momo",
-      "projectPath": "D:\\college\\5th semester\\Momo\\Momo\\Momo.csproj",
-      "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
-      "outputPath": "D:\\college\\5th semester\\Momo\\Momo\\obj\\",
+      "projectPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
+      "packagesPath": "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\",
+      "outputPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HUAWEI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Muhammad Rizqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
