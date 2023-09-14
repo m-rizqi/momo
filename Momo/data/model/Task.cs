@@ -8,17 +8,22 @@ namespace Momo.data.model
 {
     class Task
     {
-        String id;
-        String name;
-        String description;
-        bool isCompleted;
+        private String id;
+        private String name;
+        private String description;
+        private bool isCompleted;
 
-        Task(String id, String name, String description)
+        public string Id { get => id;  }
+        public string Name { get => name; }
+        public string Description { get => description; }
+        public bool IsCompleted { get => isCompleted; }
+
+        public Task(String id, String name, String description)
         {
             this.id = id;
             this.name = name;
             this.description = description;
             this.isCompleted = false;
-        }
+        }     
     }
 }
