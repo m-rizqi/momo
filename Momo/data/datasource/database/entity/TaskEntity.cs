@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class UserEntity
+    internal class TaskEntity
     {
         private String id;
         private String name;
-        private String email;
-        private String password;
+        private String description;
+        private bool isCompleted;
 
         public string Id { get => id; }
         public string Name { get => name; }
-        public string Email { get => email; }
-        public string Password { get => password; }
+        public string Description { get => description; }
+        public bool IsCompleted { get => isCompleted; }
 
-        public User(string id, string name, string email, string password)
+        public Task(String id, String name, String description)
         {
             this.id = id;
             this.name = name;
-            this.email = email;
-            this.password = password;
+            this.description = description;
+            this.isCompleted = false;
         }
     }
 }
