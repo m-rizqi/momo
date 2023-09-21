@@ -1,5 +1,5 @@
 ﻿Momo
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Hasnan\Downloads\Junpro\Momo\App.xaml
 11407045341
 
-21-1023384920
+191316886030
 194726069201
 MainWindow.xaml;
 
-False
+True
 
