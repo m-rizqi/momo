@@ -24,6 +24,7 @@ namespace Momo.data.model
             this.name = name;
             this.description = description;
             this.isCompleted = false;
-        }     
+        }  
+        
     }
 }
