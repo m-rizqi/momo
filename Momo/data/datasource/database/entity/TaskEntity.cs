@@ -13,17 +13,18 @@ namespace Momo.data.datasource.database.entity
         private String description;
         private bool isCompleted;
 
-        public string Id { get => id; }
-        public string Name { get => name; }
-        public string Description { get => description; }
-        public bool IsCompleted { get => isCompleted; }
+        public string Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public bool IsCompleted { get => isCompleted; set => isCompleted = value;}
+        public string Description { get => description; set => description = value; }
 
-        public Task(String id, String name, String description)
+        public TaskEntity() { }
+        public TaskEntity(String id, String name, String description)
         {
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.isCompleted = false;
+            Id = id;
+            Name = name;
+            Description = description;
+            IsCompleted = false;
         }
     }
 }
