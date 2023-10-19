@@ -4,13 +4,18 @@
 winexe
 C#
 .cs
-C:\Users\Hasnan\Downloads\Junpro\Momo\obj\Debug\net6.0-windows\
+C:\Users\rizqi\JunPro\Project\momo\Momo\obj\Debug\net6.0-windows\
 Momo
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
+C:\Users\rizqi\JunPro\Project\momo\Momo\App.xaml
+4-105148417
+=======
 C:\Users\Hasnan\Downloads\Junpro\Momo\App.xaml
 4457905019
+>>>>>>> main
 
 27236552749
 194726069201
