@@ -1,0 +1,24 @@
+﻿<Page x:Class="Momo.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Momo"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainWindow" Height="450" Width="800">
+    <Grid Background="White">
+        <Button x:Name="btnSignup" Content="Sign Up" HorizontalAlignment="Left" Margin="443,326,0,0" VerticalAlignment="Top" Height="41" Width="322"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="441,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" AutomationProperties.IsRequiredForForm="True" FontFamily="Tw Cen MT"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="441,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" AutomationProperties.IsRequiredForForm="True" FontFamily="Tw Cen MT"/>
+        <TextBlock HorizontalAlignment="Left" Margin="441,92,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="42" FontFamily="Tw Cen MT" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="441,169,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="42" FontFamily="Tw Cen MT" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="443,247,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" IsEnabled="False" AutomationProperties.IsRequiredForForm="True" Width="75" FontFamily="Tw Cen MT" FontSize="14"/>
+        <Rectangle HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="400" Fill="#FF3866C1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="569,37,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tw Cen MT" FontSize="24"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="941,374,0,0" VerticalAlignment="Top"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="441,267,0,0" VerticalAlignment="Top" Width="324" Height="32" FontFamily="Tw Cen MT"/>
+        <TextBlock HorizontalAlignment="Left" Margin="551,398,0,0" TextWrapping="Wrap" Text="Have account? Login" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
+
+    </Grid>
+</Page>
