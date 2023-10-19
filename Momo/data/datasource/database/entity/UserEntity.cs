@@ -18,7 +18,7 @@ namespace Momo.data.datasource.database.entity
         public string Email { get => email; }
         public string Password { get => password; }
 
-        public User(string id, string name, string email, string password)
+        public UserEntity(string id, string name, string email, string password)
         {
             this.id = id;
             this.name = name;

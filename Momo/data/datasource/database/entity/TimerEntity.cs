@@ -14,7 +14,7 @@ namespace Momo.data.datasource.database.entity
         public String Id { get { return id; } }
         public long Countdown { get { return countdown; } }
 
-        public Timer(string id, long countdown)
+        public TimerEntity(string id, long countdown)
         {
             this.id = id;
             this.countdown = countdown;
