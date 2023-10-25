@@ -18,7 +18,26 @@
         <TextBlock HorizontalAlignment="Left" Margin="569,37,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tw Cen MT" FontSize="24"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="941,374,0,0" VerticalAlignment="Top"/>
         <PasswordBox HorizontalAlignment="Left" Margin="441,267,0,0" VerticalAlignment="Top" Width="324" Height="32" FontFamily="Tw Cen MT"/>
-        <TextBlock HorizontalAlignment="Left" Margin="551,398,0,0" TextWrapping="Wrap" Text="Have account? Login" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
-
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="513,394,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Have an account?" TextWrapping="Wrap" Grid.Column="0"/>
+            <TextBlock Text="Login" TextWrapping="Wrap" Grid.Column="1" MouseLeftButtonDown="LoginText_Click" Margin="3,0,-3,0">
+                <TextBlock.FontFamily>
+                    <FontFamily>TW Cen MT</FontFamily>
+                </TextBlock.FontFamily>
+                <TextBlock.FontSize>14</TextBlock.FontSize>
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="Blue"/>
+                </TextBlock.Foreground>
+                <TextBlock.TextDecorations>
+                    <TextDecorationCollection>
+                        <TextDecoration Location="Underline"/>
+                    </TextDecorationCollection>
+                </TextBlock.TextDecorations>
+            </TextBlock>
+        </Grid>
     </Grid>
 </Page>
