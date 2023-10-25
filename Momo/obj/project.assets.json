@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\rizqi\\.nuget\\packages\\": {}
+    "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rizqi\\JunPro\\Project\\momo\\Momo\\Momo.csproj",
+      "projectUniqueName": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
       "projectName": "Momo",
-      "projectPath": "C:\\Users\\rizqi\\JunPro\\Project\\momo\\Momo\\Momo.csproj",
-      "packagesPath": "C:\\Users\\rizqi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rizqi\\JunPro\\Project\\momo\\Momo\\obj\\",
+      "projectPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
+      "packagesPath": "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\",
+      "outputPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\rizqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Muhammad Rizqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

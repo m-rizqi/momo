@@ -23,6 +23,7 @@ namespace Momo
         public MainWindow()
         {
             InitializeComponent();
+            this.Content = new LoginPage();
         }
     }
 }
