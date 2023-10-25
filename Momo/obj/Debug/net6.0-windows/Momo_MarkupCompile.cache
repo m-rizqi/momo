@@ -4,19 +4,14 @@
 winexe
 C#
 .cs
-C:\Users\rizqi\JunPro\Project\momo\Momo\obj\Debug\net6.0-windows\
+C:\Users\kus19\Documents\MEGA\Kuliah\Sem 5\JunPro\momo\Momo\obj\Debug\net6.0-windows\
 Momo
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-<<<<<<< HEAD
-C:\Users\rizqi\JunPro\Project\momo\Momo\App.xaml
-4-105148417
-=======
-C:\Users\Hasnan\Downloads\Junpro\Momo\App.xaml
+C:\Users\kus19\Documents\MEGA\Kuliah\Sem 5\JunPro\momo\Momo\App.xaml
 4457905019
->>>>>>> main
-
+61456611240
 27236552749
 194726069201
 MainWindow.xaml;presentation\home\HomePage.xaml;presentation\login\LoginPage.xaml;presentation\register\RegisterPage.xaml;
