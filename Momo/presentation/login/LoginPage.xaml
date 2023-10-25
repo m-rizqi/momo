@@ -7,14 +7,33 @@
         mc:Ignorable="d"
         Title="LoginPage" Height="450" Width="800">
     <Grid>
-        <Button Content="Login" Margin="430,326,36,61" IsCancel="True" Click="Button_Click" FontFamily="Tw Cen MT" FontSize="14"/>
+        <Button Content="Login" Margin="430,326,36,61" IsCancel="True" FontFamily="Tw Cen MT" FontSize="14"/>
         <TextBox HorizontalAlignment="Left" Margin="430,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="334" Height="35"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="395" Fill="#FF2A51EF"/>
         <TextBlock HorizontalAlignment="Left" Margin="430,123,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="42" FontFamily="Tw Cen MT" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="430,214,0,0" TextWrapping="Wrap" Text="Passsword" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="62" FontFamily="Tw Cen MT" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="430,214,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="62" FontFamily="Tw Cen MT" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="565,58,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="51" FontFamily="Tw Cen MT" FontSize="20" FontWeight="Bold"/>
         <PasswordBox HorizontalAlignment="Left" Margin="430,234,0,0" VerticalAlignment="Top" Width="334" Height="35" PasswordChar="#"/>
-        <TextBlock HorizontalAlignment="Left" Margin="513,394,0,0" TextWrapping="Wrap" Text="Don't have account? Sign Up
-                   " VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="163" FontFamily="Tw Cen MT" FontSize="14"/>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="513,394,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Don't have an account?" TextWrapping="Wrap" Grid.Column="0"/>
+            <TextBlock Text="Sign Up" TextWrapping="Wrap" Grid.Column="1" MouseLeftButtonDown="SignUpText_Click">
+                <TextBlock.FontFamily>
+                    <FontFamily>TW Cen MT</FontFamily>
+                </TextBlock.FontFamily>
+                <TextBlock.FontSize>14</TextBlock.FontSize>
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="Blue"/>
+                </TextBlock.Foreground>
+                <TextBlock.TextDecorations>
+                    <TextDecorationCollection>
+                        <TextDecoration Location="Underline"/>
+                    </TextDecorationCollection>
+                </TextBlock.TextDecorations>
+            </TextBlock>
+        </Grid>
     </Grid>
 </Window>
