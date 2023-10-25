@@ -1,4 +1,4 @@
-﻿using Momo.presentation.login;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -15,7 +15,8 @@ namespace Momo
         }
         private void LoginText_Click(object sender, MouseButtonEventArgs e)
         {
-            this.Content = new LoginPage();
+            Window window = Window.GetWindow(this);
+            window.Content = new LoginPage();
         }
     }
 }

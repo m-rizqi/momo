@@ -1,20 +1,23 @@
-﻿using System;
+﻿
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Momo.presentation.login
+namespace Momo
 {
-    public partial class LoginPage : Window
+    /// <summary>
+    /// Interaction logic for LoginPage.xaml
+    /// </summary>
+    public partial class LoginPage : Page
     {
         public LoginPage()
         {
             InitializeComponent();
         }
-
         private void SignUpText_Click(object sender, MouseButtonEventArgs e)
         {
-            // Navigate to the RegisterPage.xaml
-            this.Content = new RegisterPage();
+            Window window = Window.GetWindow(this);
+            window.Content = new RegisterPage();
         }
     }
 }

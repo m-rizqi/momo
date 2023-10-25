@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Have an account?" TextWrapping="Wrap" Grid.Column="0"/>
-            <TextBlock Text="Login" TextWrapping="Wrap" Grid.Column="1" MouseLeftButtonDown="LoginText_Click">
+            <TextBlock Text="Login" TextWrapping="Wrap" Grid.Column="1" MouseLeftButtonDown="LoginText_Click" Margin="3,0,-3,0">
                 <TextBlock.FontFamily>
                     <FontFamily>TW Cen MT</FontFamily>
                 </TextBlock.FontFamily>
