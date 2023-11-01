@@ -9,7 +9,7 @@ namespace Momo.data.datasource.database
 {
     internal class DatabaseService
     {
-        private string connectionString = "Host=40.76.116.47;Port=5432;Username=postgres;Password=postgres;Database=momo";
+        private string connectionString = "Host=172.188.65.129;Port=5432;Username=postgres;Password=postgres;Database=momo";
         private NpgsqlConnection _connection;
 
         public DatabaseService()
@@ -34,7 +34,7 @@ namespace Momo.data.datasource.database
                         while (reader.Read())
                         {
                             UserEntity user = new UserEntity(
-                                id: reader["id"].ToString(),
+                                id: (int)reader["id"],
                                 name: reader["name"].ToString(),
                                 email: reader["email"].ToString(),
                                 password: reader["password"].ToString()
@@ -74,7 +74,7 @@ namespace Momo.data.datasource.database
                         if (reader.Read())
                         {
                             UserEntity user = new UserEntity(
-                                id: reader["id"].ToString(),
+                                id: (int)reader["id"],
                                 name: reader["name"].ToString(),
                                 email: reader["email"].ToString(),
                                 password: reader["password"].ToString()
@@ -244,7 +244,7 @@ namespace Momo.data.datasource.database
                         while (reader.Read())
                         {
                             TimerEntity timer = new TimerEntity(
-                                id: reader["id"].ToString(),
+                                id: (int)reader["id"],
                                 countdown: (long)reader["countdown"]
                             );
                             timers.Add(timer);
@@ -322,7 +322,7 @@ namespace Momo.data.datasource.database
                         if (reader.Read())
                         {
                             return new TimerEntity(
-                                id: reader["id"].ToString(),
+                                id: (int)reader["id"],
                                 countdown: (long)reader["countdown"]
                             );
                         }
@@ -441,7 +441,7 @@ namespace Momo.data.datasource.database
                         {
                             TaskEntity task = new TaskEntity
                             {
-                                Id = reader["id"].ToString(),
+                                Id = (int)reader["id"],
                                 Name = reader["name"].ToString(),
                                 Description = reader["description"].ToString(),
                                 IsCompleted = (bool)reader["iscompleted"]
@@ -525,7 +525,7 @@ namespace Momo.data.datasource.database
                         {
                             return new TaskEntity
                             {
-                                Id = reader["id"].ToString(),
+                                Id = (int)reader["id"],
                                 Name = reader["name"].ToString(),
                                 Description = reader["description"].ToString(),
                                 IsCompleted = (bool)reader["iscompleted"]
@@ -631,6 +631,423 @@ namespace Momo.data.datasource.database
         }
 
         //#endregion TASK
+
+        //#region PET
+        public List<PetEntity> GetAllPets()
+        {
+            List<PetEntity> pets = new List<PetEntity>();
+
+            try
+            {
+                _connection.Open();
+                string sql = "SELECT * FROM pet";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            PetEntity pet = new PetEntity
+                            {
+                                Id = (int)reader["id_pet"],
+                                Name = reader["name"].ToString(),
+                                Type = reader["type"].ToString(),
+                                ImageUrl = reader["image_url"].ToString()
+                            };
+                            pets.Add(pet);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return pets;
+        }
+
+        public void CreatePet(PetEntity pet)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "INSERT INTO pet (id_pet, name, type, image_url) VALUES (@id_pet, @name, @type, @image_url)";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_pet", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("name", NpgsqlDbType.Varchar));
+                    command.Parameters.Add(new NpgsqlParameter("type", NpgsqlDbType.Varchar));
+                    command.Parameters.Add(new NpgsqlParameter("image_url", NpgsqlDbType.Text));
+
+                    command.Parameters[0].Value = pet.Id;
+                    command.Parameters[1].Value = pet.Name;
+                    command.Parameters[2].Value = pet.Type;
+                    command.Parameters[3].Value = pet.ImageUrl;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Pet created successfully.");
+                    }
+                    else
+                    {
+                        string message = "Create pet failed.";
+                        Console.WriteLine(message);
+                        throw new Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public PetEntity GetPet(int id)
+        {
+            try
+            {
+                _connection.Open();
+                string sql = "SELECT * FROM pet WHERE id_pet = @id_pet";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_pet", NpgsqlDbType.Integer));
+                    command.Parameters[0].Value = id;
+
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new PetEntity
+                            {
+                                Id = (int)reader["id_pet"],
+                                Name = reader["name"].ToString(),
+                                Type = reader["type"].ToString(),
+                                ImageUrl = reader["image_url"].ToString()
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public void UpdatePet(PetEntity pet)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "UPDATE pet SET name = @name, type = @type, image_url = @image_url WHERE id_pet = @id_pet";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_pet", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("name", NpgsqlDbType.Varchar));
+                    command.Parameters.Add(new NpgsqlParameter("type", NpgsqlDbType.Varchar));
+                    command.Parameters.Add(new NpgsqlParameter("image_url", NpgsqlDbType.Text));
+
+                    command.Parameters[0].Value = pet.Id;
+                    command.Parameters[1].Value = pet.Name;
+                    command.Parameters[2].Value = pet.Type;
+                    command.Parameters[3].Value = pet.ImageUrl;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Pet updated successfully.");
+                    }
+                    else
+                    {
+                        string message = "Update pet failed. Pet not found or no changes made.";
+                        Console.WriteLine(message);
+                        throw new Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public void DeletePet(int id)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "DELETE FROM pet WHERE id_pet = @id_pet";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_pet", NpgsqlDbType.Integer));
+                    command.Parameters[0].Value = id;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Pet deleted successfully.");
+                    }
+                    else
+                    {
+                        string message = "Delete pet failed. Pet not found.";
+                        Console.WriteLine(message);
+                        throw new Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        //#region PET
+
+        //#region SESSION
+
+        public List<SessionEntity> GetAllSessions()
+        {
+            List<SessionEntity> sessions = new List<SessionEntity>();
+
+            try
+            {
+                _connection.Open();
+                string sql = "SELECT * FROM session";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SessionEntity session = new SessionEntity
+                            {
+                                Id = (int)reader["id_session"],
+                                TaskId = (int)reader["id_task"],
+                                TimeId = (int)reader["id_time"],
+                                UserId = (int)reader["id_user"]
+                            };
+                            sessions.Add(session);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return sessions;
+        }
+
+        public void CreateSession(SessionEntity session)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "INSERT INTO session (id_session, id_task, id_time, id_user) VALUES (@id_session, @id_task, @id_time, @id_user)";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_session", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_task", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_time", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_user", NpgsqlDbType.Integer));
+
+                    command.Parameters[0].Value = session.Id;
+                    command.Parameters[1].Value = session.TaskId;
+                    command.Parameters[2].Value = session.TimeId;
+                    command.Parameters[3].Value = session.UserId;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Session created successfully.");
+                    }
+                    else
+                    {
+                        string message = "Create session failed.";
+                        Console.WriteLine(message);
+                        throw new Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public SessionEntity GetSession(int id)
+        {
+            try
+            {
+                _connection.Open();
+                string sql = "SELECT * FROM session WHERE id_session = @id_session";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_session", NpgsqlDbType.Integer));
+                    command.Parameters[0].Value = id;
+
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new SessionEntity
+                            {
+                                Id = (int)reader["id_session"],
+                                TaskId = (int)reader["id_task"],
+                                TimeId = (int)reader["id_time"],
+                                UserId = (int)reader["id_user"]
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public void UpdateSession(SessionEntity session)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "UPDATE session SET id_task = @id_task, id_time = @id_time, id_user = @id_user WHERE id_session = @id_session";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_session", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_task", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_time", NpgsqlDbType.Integer));
+                    command.Parameters.Add(new NpgsqlParameter("id_user", NpgsqlDbType.Integer));
+
+                    command.Parameters[0].Value = session.Id;
+                    command.Parameters[1].Value = session.TaskId;
+                    command.Parameters[2].Value = session.TimeId;
+                    command.Parameters[3].Value = session.UserId;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Session updated successfully.");
+                    }
+                    else
+                    {
+                        string message = "Update session failed. Session not found or no changes made.";
+                        Console.WriteLine(message);
+                        throw an Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        public void DeleteSession(int id)
+        {
+            try
+            {
+                _connection.Open();
+
+                string sql = "DELETE FROM session WHERE id_session = @id_session";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, _connection))
+                {
+                    command.Parameters.Add(new NpgsqlParameter("id_session", NpgsqlDbType.Integer));
+                    command.Parameters[0].Value = id;
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Session deleted successfully.");
+                    }
+                    else
+                    {
+                        string message = "Delete session failed. Session not found.";
+                        Console.WriteLine(message);
+                        throw new Exception(message);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw e;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        //#endregion SESSION
 
     }
 }
