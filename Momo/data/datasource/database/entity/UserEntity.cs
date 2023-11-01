@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class UserEntity
+    class UserEntity
     {
-        private String id;
+        private int id;
         private String name;
         private String email;
         private String password;
 
-        public string Id { get => id; }
+        public int Id { get => id; }
         public string Name { get => name; }
         public string Email { get => email; }
         public string Password { get => password; }
 
-        public UserEntity(string id, string name, string email, string password)
+        public UserEntity(int id, string name, string email, string password)
         {
             this.id = id;
             this.name = name;

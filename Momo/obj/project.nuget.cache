@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TchAuzb2Tq2YzLTz2eFkRW9ewO9H8RWb4V+D6PHG6OU3mvkX4fEpbSCIFuypoGNvJaPvqTrrUZ+AWn/4OYJzjw==",
+  "dgSpecHash": "UuESh8FXQOcg0N5l1TThWHsICqv2FHJcU5T10nykRyMbSJQ63Qxy5TcKC03p58Lkv5xi9mwMqTquDC5rFkWCJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\Momo.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "projectFilePath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
 }

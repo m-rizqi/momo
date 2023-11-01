@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\Momo.csproj": {}
+    "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\Momo.csproj": {
+    "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\Momo.csproj",
+        "projectUniqueName": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
         "projectName": "Momo",
-        "projectPath": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\Momo.csproj",
-        "packagesPath": "C:\\Users\\kus19\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo\\Momo\\obj\\",
+        "projectPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
+        "packagesPath": "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\",
+        "outputPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kus19\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Muhammad Rizqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
