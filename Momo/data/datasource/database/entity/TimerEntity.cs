@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class TimerEntity
+    public class TimerEntity
     {
         private int id;
         private long countdown;

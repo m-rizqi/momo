@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class SessionEntity
+    public class SessionEntity
     {
         public int Id { get; set; }
 

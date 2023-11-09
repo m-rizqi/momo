@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class PetEntity
+    public class PetEntity
     {
         public int Id { get; set; }
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj": {}
+    "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj": {}
   },
   "projects": {
-    "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj": {
+    "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
+        "projectUniqueName": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj",
         "projectName": "Momo",
-        "projectPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\Momo.csproj",
-        "packagesPath": "C:\\Users\\Muhammad Rizqi\\.nuget\\packages\\",
-        "outputPath": "D:\\UGM\\Semester 5\\Proyek Junior Teknologi Informasi\\momo\\Momo\\obj\\",
+        "projectPath": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj",
+        "packagesPath": "C:\\Users\\Hasnan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Muhammad Rizqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hasnan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

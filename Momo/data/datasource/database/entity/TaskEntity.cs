@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Momo.data.datasource.database.entity
 {
-    internal class TaskEntity
+    public class TaskEntity
     {
         private int id;
         private String name;

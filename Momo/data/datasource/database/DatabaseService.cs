@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Momo.data.datasource.database
 {
-    internal class DatabaseService
+    public class DatabaseService
     {
         private string connectionString = "Host=172.188.65.129;Port=5432;Username=postgres;Password=postgres;Database=momo";
         private NpgsqlConnection _connection;
@@ -995,7 +995,7 @@ namespace Momo.data.datasource.database
                     {
                         string message = "Update session failed. Session not found or no changes made.";
                         Console.WriteLine(message);
-                        throw an Exception(message);
+                        throw new Exception(message);
                     }
                 }
             }

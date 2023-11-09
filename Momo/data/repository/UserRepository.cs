@@ -45,7 +45,7 @@ namespace Momo.data.repository
 
         public override void Delete(int id)
         {
-            _databaseService.UpdateUser(id);
+            _databaseService.DeleteUser(id);
         }
     }
 }
