@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\kus19\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kus19\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\HUAWEI\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\HUAWEI\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

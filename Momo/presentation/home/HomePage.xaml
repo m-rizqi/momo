@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="\data\img\bg.png" Stretch="Fill" />
     </Window.Background>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="440,31,0,0" TextWrapping="Wrap" Text="25:00" VerticalAlignment="Top" FontSize="72" FontFamily="Tw Cen MT"/>
+        <TextBlock x:Name="lblPomodoroTimer" HorizontalAlignment="Left" Margin="440,55,0,0" TextWrapping="Wrap" Text="25:00" VerticalAlignment="Top" FontSize="72" FontFamily="Tw Cen MT"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,5,0,0" TextWrapping="Wrap" Text="Listed Activities" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
         <ListBox x:Name="listActivities" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,26,551,233"/>
         <TextBox x:Name="txtActivity" HorizontalAlignment="Left" Margin="282,228,0,0" TextWrapping="Wrap" Text="Lorem Ipsum" VerticalAlignment="Top" Width="438" Height="24" FontFamily="Tw Cen MT" FontSize="14"/>
@@ -27,17 +27,20 @@
             </StackPanel>
         </Button>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,249,551,10"/>
-        <Button HorizontalAlignment="Left" Margin="528,131,0,0" VerticalAlignment="Top">
+        <Button x:Name="btnStart" HorizontalAlignment="Left" Margin="528,138,0,0" VerticalAlignment="Top" Click="btnStart_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="\data\img\play.png" Width="20" Height="20"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="499,131,0,0" VerticalAlignment="Top">
+        <Button x:Name="btnPause" HorizontalAlignment="Left" Margin="499,138,0,0" VerticalAlignment="Top" Click="btnPause_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="\data\img\pause.png" Width="20" Height="20"/>
             </StackPanel>
         </Button>
         <Image Source="\data\img\cat.png" Width="100" Height="100" Margin="461,322,239,12"/>
+        <Button x:Name="btnShortBreakMode" Content="Short Break" HorizontalAlignment="Left" Margin="494,26,0,0" VerticalAlignment="Top" Click="btnShortBreakMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
+        <Button x:Name="btnLongBreakMode" Content="Long Break" HorizontalAlignment="Left" Margin="568,26,0,0" VerticalAlignment="Top" Click="btnLongBreakMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
+        <Button x:Name="btnPomodoroMode" Content="Pomodoro" HorizontalAlignment="Left" Margin="420,26,0,0" VerticalAlignment="Top" Click="btnPomodoroMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
 
     </Grid>
 </Window>
