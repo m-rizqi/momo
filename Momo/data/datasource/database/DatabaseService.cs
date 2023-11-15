@@ -475,17 +475,18 @@ namespace Momo.data.datasource.database
             {
                 _connection.Open();
 
-                string sql = "INSERT INTO task (id, name, description, iscompleted) VALUES (@id, @name, @description, @iscompleted)";
+                string sql = "INSERT INTO task (name, description, is_completed) VALUES (@name, @description, @is_completed)";
                 using NpgsqlCommand command = new(sql, _connection);
-                command.Parameters.Add(new NpgsqlParameter("id", NpgsqlDbType.Varchar));
+                //command.Parameters.Add(new NpgsqlParameter("id", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("name", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("description", NpgsqlDbType.Varchar));
-                command.Parameters.Add(new NpgsqlParameter("iscompleted", NpgsqlDbType.Boolean));
+                command.Parameters.Add(new NpgsqlParameter("is_completed", NpgsqlDbType.Boolean));
 
-                command.Parameters[0].Value = task.Id;
-                command.Parameters[1].Value = task.Name;
-                command.Parameters[2].Value = task.Description;
-                command.Parameters[3].Value = task.IsCompleted;
+                command.Parameters[0].Value = task.Name;
+                command.Parameters[1].Value = task.Description;
+                command.Parameters[2].Value = task.IsCompleted;
+                //command.Parameters[3].Value = task.IsCompleted;
+                //MessageBox.Show(command.Parameters[2].Value.ToString());
 
                 int rowsAffected = command.ExecuteNonQuery();
 

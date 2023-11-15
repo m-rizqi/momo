@@ -19,6 +19,12 @@ namespace Momo.data.datasource.database.entity
         public string Description { get => description; set => description = value; }
 
         public TaskEntity() { }
+        public TaskEntity(String name, String description)
+        {
+            Name = name;
+            Description = description;
+            IsCompleted = false;
+        }
         public TaskEntity(int id, String name, String description)
         {
             Id = id;

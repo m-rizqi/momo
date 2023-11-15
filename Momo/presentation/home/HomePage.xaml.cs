@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Momo.data.datasource.database;
+using Momo.data.datasource.database.entity;
+using Momo.domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +29,12 @@ namespace Momo.presentation.home
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DatabaseService dbServices = new();
 
+            string activityName = txtActivity.Text;
+            TaskEntity taskEntity = new TaskEntity(activityName, "-");
+
+            dbServices.CreateTask(taskEntity); 
         }
     }
 }
