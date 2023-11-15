@@ -5,18 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Momo"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"      
       Title="MainWindow" Height="450" Width="800">
     <Grid Background="White">
-        <Button x:Name="btnSignup" Content="Login" HorizontalAlignment="Left" Margin="443,292,0,0" VerticalAlignment="Top" Height="41" Width="322"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="441,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" AutomationProperties.IsRequiredForForm="True" FontFamily="Tw Cen MT"/>
-        <TextBlock HorizontalAlignment="Left" Margin="441,101,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="42" FontFamily="Tw Cen MT" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="443,196,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" IsEnabled="False" AutomationProperties.IsRequiredForForm="True" Width="75" FontFamily="Tw Cen MT" FontSize="14"/>
-        <Rectangle HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="400" Fill="#FF3866C1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="569,37,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tw Cen MT" FontSize="24"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="941,374,0,0" VerticalAlignment="Top"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="441,216,0,0" VerticalAlignment="Top" Width="324" Height="32" FontFamily="Tw Cen MT"/>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="513,394,0,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="731*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="374,292,0,0" VerticalAlignment="Top" Height="41" Width="322" Click="btnLogin_Click" Grid.Column="1"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="34" Margin="372,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324" AutomationProperties.IsRequiredForForm="True" FontFamily="Tw Cen MT" FontSize="24" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="372,101,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" Width="42" FontFamily="Tw Cen MT" FontSize="14" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="374,196,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" RenderTransformOrigin="0.813,6.244" IsEnabled="False" AutomationProperties.IsRequiredForForm="True" Width="75" FontFamily="Tw Cen MT" FontSize="14" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="450" VerticalAlignment="Center" Width="400" Fill="#FF3866C1" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,37,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Tw Cen MT" FontSize="24" Grid.Column="1"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="872,374,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="372,216,0,0" VerticalAlignment="Top" Width="324" Height="32" FontFamily="Tw Cen MT" FontSize="24" Grid.Column="1"/>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,394,0,0" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj": {}
+    "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj": {
+    "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj",
+        "projectUniqueName": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj",
         "projectName": "Momo",
-        "projectPath": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\Momo.csproj",
-        "packagesPath": "C:\\Users\\Hasnan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hasnan\\Downloads\\momo\\Momo\\obj\\",
+        "projectPath": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj",
+        "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
+        "outputPath": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hasnan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HUAWEI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,9 +9,9 @@ namespace Momo.data.datasource.database.entity
     public class UserEntity
     {
         private int id;
-        private String name;
-        private String email;
-        private String password;
+        private string name;
+        private string email;
+        private string password;
 
         public int Id { get => id; }
         public string Name { get => name; }
