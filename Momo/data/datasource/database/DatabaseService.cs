@@ -448,10 +448,10 @@ namespace Momo.data.datasource.database
                 {
                     TaskEntity task = new()
                     {
-                        Id = (int)reader["id"],
+                        Id = (int)reader["id_task"],
                         Name = reader["name"].ToString(),
                         Description = reader["description"].ToString(),
-                        IsCompleted = (bool)reader["iscompleted"]
+                        IsCompleted = (bool)reader["is_completed"]
                     };
                     tasks.Add(task);
                 }

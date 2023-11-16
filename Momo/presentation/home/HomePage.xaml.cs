@@ -3,6 +3,7 @@ using Momo.data.datasource.database.entity;
 using Momo.domain;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -161,9 +162,9 @@ namespace Momo.presentation.home
 
             List<TaskEntity> tasks = dbService.GetAllTasks();
 
-            historyActivities.ItemsSource = tasks;
+            historyActivities.ItemsSource = tasks.Select(task => task.Name).ToList();
 
-            historyActivities.DisplayMemberPath = "Name";
+            // historyActivities.DisplayMemberPath = "Name";
         }
 
     }
