@@ -30,7 +30,7 @@ namespace Momo.presentation.home
             InitializeComponent();
             InitializeTimer();
             btnPomodoroMode.Background = new SolidColorBrush(Colors.LightPink);
-            Display_HistoryActivities();
+            Display_Activities();
         }
 
         private DispatcherTimer pomodoroTimer;
@@ -153,18 +153,20 @@ namespace Momo.presentation.home
             string activityName = txtActivity.Text;
             TaskEntity taskEntity = new TaskEntity(activityName, "-");
 
-            dbServices.CreateTask(taskEntity); 
+            dbServices.CreateTask(taskEntity);
+            Display_Activities();
         }
 
-        private void Display_HistoryActivities()
+        private void Display_Activities()
         {
             DatabaseService dbService = new();
 
             List<TaskEntity> tasks = dbService.GetAllTasks();
 
-            historyActivities.ItemsSource = tasks.Select(task => task.Name).ToList();
+            List<String> taskNames = tasks.Select(task => task.Name).ToList();
 
-            // historyActivities.DisplayMemberPath = "Name";
+            historyActivities.ItemsSource = taskNames;
+            listActivities.ItemsSource = taskNames;
         }
 
     }
