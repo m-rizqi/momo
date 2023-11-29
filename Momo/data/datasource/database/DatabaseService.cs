@@ -201,13 +201,13 @@ namespace Momo.data.datasource.database
             }
         }
 
-        public bool LoginUser(string email, string password)
+        public int LoginUser(string email, string password)
         {
             try
             {
                 _connection.Open();
 
-                string sql = "SELECT COUNT(*) FROM \"users\" WHERE email = @email AND password = @password";
+                string sql = "SELECT id FROM \"users\" WHERE email = @email AND password = @password";
                 using NpgsqlCommand command = new(sql, _connection);
                 command.Parameters.Add(new NpgsqlParameter("email", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("password", NpgsqlDbType.Varchar));
@@ -219,30 +219,30 @@ namespace Momo.data.datasource.database
 
                 if (result != null)
                 {
-                    int userCount = Convert.ToInt32(result);
+                    int userId = Convert.ToInt32(result);
 
-                    if (userCount > 0)
+                    if (userId > -1)
                     {
                         MessageBox.Show("Login successful.");
-                        return true;
+                        return userId;
                     }
                     else
                     {
                         MessageBox.Show("Invalid email or password.");
-                        return false;
+                        return -1;
                     }
                 }
                 else
                 {
                     MessageBox.Show("No result returned from the query.");
-                    return false;
+                    return -1;
                 }
             }
             catch (Exception e)
             {
                 string errorMessage = e.Message.ToString();
                 MessageBox.Show(errorMessage);
-                return false;
+                return -1;
             }
             finally
             {
@@ -434,21 +434,22 @@ namespace Momo.data.datasource.database
 
         //#region TASK
 
-        public List<TaskEntity> GetAllTasks()
+        public List<TaskEntity> GetAllTasks(int userId)
         {
             List<TaskEntity> tasks = new();
 
             try
             {
                 _connection.Open();
-                string sql = "SELECT * FROM task";
+                string sql = "SELECT * FROM task WHERE user_id = @userId";
                 using NpgsqlCommand command = new(sql, _connection);
                 using NpgsqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     TaskEntity task = new()
                     {
-                        Id = (int)reader["id_task"],
+                        UserId = (int)reader["user_id"],
+                        TaskId = (int)reader["id_task"],
                         Name = reader["name"].ToString(),
                         Description = reader["description"].ToString(),
                         IsCompleted = (bool)reader["is_completed"]
@@ -475,16 +476,18 @@ namespace Momo.data.datasource.database
             {
                 _connection.Open();
 
-                string sql = "INSERT INTO task (name, description, is_completed) VALUES (@name, @description, @is_completed)";
+                string sql = "INSERT INTO task (name, description, is_completed, user_id) VALUES (@name, @description, @is_completed, @user_id)";
                 using NpgsqlCommand command = new(sql, _connection);
                 //command.Parameters.Add(new NpgsqlParameter("id", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("name", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("description", NpgsqlDbType.Varchar));
                 command.Parameters.Add(new NpgsqlParameter("is_completed", NpgsqlDbType.Boolean));
+                command.Parameters.Add(new NpgsqlParameter("user_id", NpgsqlDbType.Integer));
 
                 command.Parameters[0].Value = task.Name;
                 command.Parameters[1].Value = task.Description;
                 command.Parameters[2].Value = task.IsCompleted;
+                command.Parameters[3].Value = task.UserId;
                 //command.Parameters[3].Value = task.IsCompleted;
                 //MessageBox.Show(command.Parameters[2].Value.ToString());
 
@@ -594,35 +597,36 @@ namespace Momo.data.datasource.database
             }
         }
 
-        public void DeleteTask(string id)
+        public bool DeleteAllTask(int userId)
         {
             try
             {
                 _connection.Open();
 
-                string sql = "DELETE FROM task WHERE id = @id";
+                string sql = "DELETE FROM task WHERE user_id = @userId";
                 using NpgsqlCommand command = new(sql, _connection);
                 command.Parameters.Add(new NpgsqlParameter("id", NpgsqlDbType.Varchar));
-                command.Parameters[0].Value = id;
+                command.Parameters[0].Value = userId;
 
                 int rowsAffected = command.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
                     Console.WriteLine("Task deleted successfully.");
+                    return true;
                 }
                 else
                 {
                     string message = "Delete task failed. Task not found.";
-                    Console.WriteLine(message);
-                    throw new Exception(message);
+                    Console.WriteLine(message);                    
+                    return false;
                 }
             }
             catch (Exception e)
             {
                 string errorMessage = e.Message.ToString();
-                MessageBox.Show(errorMessage);
-                throw new Exception(errorMessage);
+                MessageBox.Show(errorMessage);                
+                return false;
             }
             finally
             {

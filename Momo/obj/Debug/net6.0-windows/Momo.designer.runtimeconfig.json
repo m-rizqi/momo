@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Muhammad Rizqi\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Muhammad Rizqi\\.nuget\\packages"
+      "C:\\Users\\HUAWEI\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\HUAWEI\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

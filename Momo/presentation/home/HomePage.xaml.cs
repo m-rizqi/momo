@@ -25,12 +25,14 @@ namespace Momo.presentation.home
     public partial class HomePage : Window
     {
         private string activeMode = "Pomodoro";
+        private int currentUserId;
         public HomePage()
         {
             InitializeComponent();
             InitializeTimer();
-            btnPomodoroMode.Background = new SolidColorBrush(Colors.LightPink);
             Display_Activities();
+            currentUserId = currentUserId;
+            btnPomodoroMode.Background = new SolidColorBrush(Colors.LightPink);
         }
 
         private DispatcherTimer pomodoroTimer;
@@ -151,7 +153,7 @@ namespace Momo.presentation.home
             DatabaseService dbServices = new();
 
             string activityName = txtActivity.Text;
-            TaskEntity taskEntity = new TaskEntity(activityName, "-");
+            TaskEntity taskEntity = new TaskEntity(currentUserId, activityName, "-");
 
             dbServices.CreateTask(taskEntity);
             Display_Activities();
@@ -161,13 +163,29 @@ namespace Momo.presentation.home
         {
             DatabaseService dbService = new();
 
-            List<TaskEntity> tasks = dbService.GetAllTasks();
+            List<TaskEntity> tasks = dbService.GetAllTasks(currentUserId);
 
             List<String> taskNames = tasks.Select(task => task.Name).ToList();
 
             historyActivities.ItemsSource = taskNames;
             listActivities.ItemsSource = taskNames;
         }
+        
+        private void btnDeleteTask_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseService dbService = new();
 
+            bool isSuccess = dbService.DeleteAllTask(currentUserId);
+
+            if (isSuccess)
+            {
+                historyActivities.ItemsSource = null;
+                MessageBox.Show("All tasks have been deleted successfully.");
+            }        
+            else
+            {
+                MessageBox.Show("Failed to delete all tasks.");
+            }
+        }
     }
 }

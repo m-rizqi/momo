@@ -21,7 +21,7 @@
             </StackPanel>
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="12,225,0,0" TextWrapping="Wrap" Text="Activity History" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
-        <Button HorizontalAlignment="Left" Margin="225,225,0,0" VerticalAlignment="Top">
+        <Button x:Name="btnDeleteTask" HorizontalAlignment="Left" Margin="225,225,0,0" VerticalAlignment="Top" Click="btnDeleteTask_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="\data\img\delete.png" Width="20" Height="20"/>
             </StackPanel>
@@ -41,6 +41,5 @@
         <Button x:Name="btnShortBreakMode" Content="Short Break" HorizontalAlignment="Left" Margin="494,26,0,0" VerticalAlignment="Top" Click="btnShortBreakMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
         <Button x:Name="btnLongBreakMode" Content="Long Break" HorizontalAlignment="Left" Margin="568,26,0,0" VerticalAlignment="Top" Click="btnLongBreakMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
         <Button x:Name="btnPomodoroMode" Content="Pomodoro" HorizontalAlignment="Left" Margin="420,26,0,0" VerticalAlignment="Top" Click="btnPomodoroMode_Click" FontFamily="Tw Cen MT" Height="22" Width="69"/>
-
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ namespace Momo
     /// </summary>
     public partial class LoginPage : Page
     {        
+        public static int userId;
         public LoginPage()
         {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace Momo
             string password = txtPassword.Password;
 
             DatabaseService dbServices = new();
-            isLogin = dbServices.LoginUser(email, password);
+            userId = dbServices.LoginUser(email, password);            
+            isLogin = userId > -1;
 
             if(isLogin)
             {
