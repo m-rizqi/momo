@@ -9,13 +9,13 @@ namespace Momo.data.datasource.database.entity
     public class TaskEntity
     {
         private int id;
-        private int userId;
+        private string userId;
         private String name;
         private String description;
         private bool isCompleted;
 
         public int TaskId { get => id; set => id = value; }
-        public int UserId { get => userId; set => userId = value; }
+        public string UserId { get => userId; set => userId = value; }
         public string Name { get => name; set => name = value; }
         public bool IsCompleted { get => isCompleted; set => isCompleted = value;}
         public string Description { get => description; set => description = value; }
@@ -27,7 +27,7 @@ namespace Momo.data.datasource.database.entity
             Description = description;
             IsCompleted = false;
         }
-        public TaskEntity(int userId, String name, String description)
+        public TaskEntity(string userId, String name, String description)
         {
             UserId = userId;
             Name = name;
@@ -35,7 +35,7 @@ namespace Momo.data.datasource.database.entity
             IsCompleted = false;
         }
 
-        public TaskEntity(int taskId, int userId, String name, String description)
+        public TaskEntity(int taskId, string userId, String name, String description)
         {
             TaskId = taskId;
             UserId = userId;

@@ -163,19 +163,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HUAWEI\\.nuget\\packages\\": {}
+    "C:\\Users\\kus19\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj",
+      "projectUniqueName": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo_last\\momo\\Momo\\Momo.csproj",
       "projectName": "Momo",
-      "projectPath": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\Momo.csproj",
-      "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
-      "outputPath": "D:\\college\\5th semester\\Junior Project\\momo\\Momo\\obj\\",
+      "projectPath": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo_last\\momo\\Momo\\Momo.csproj",
+      "packagesPath": "C:\\Users\\kus19\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kus19\\Documents\\MEGA\\Kuliah\\Sem 5\\JunPro\\momo_last\\momo\\Momo\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\HUAWEI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kus19\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -225,7 +230,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

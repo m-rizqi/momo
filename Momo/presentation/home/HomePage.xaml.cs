@@ -25,13 +25,13 @@ namespace Momo.presentation.home
     public partial class HomePage : Window
     {
         private string activeMode = "Pomodoro";
-        private int currentUserId;
+        private string currentUserId;
         public HomePage()
         {
             InitializeComponent();
             InitializeTimer();
-            Display_Activities();
-            currentUserId = currentUserId;
+            currentUserId = LoginPage.userId;
+            Display_Activities();            
             btnPomodoroMode.Background = new SolidColorBrush(Colors.LightPink);
         }
 
@@ -165,10 +165,11 @@ namespace Momo.presentation.home
 
             List<TaskEntity> tasks = dbService.GetAllTasks(currentUserId);
 
-            List<String> taskNames = tasks.Select(task => task.Name).ToList();
+            List<String> uncompletedTaskNames = tasks.Where(task => !task.IsCompleted).Select(task => task.Name).ToList();
+            List<String> completedTaskNames = tasks.Where(task => task.IsCompleted).Select(task => task.Name).ToList();
 
-            historyActivities.ItemsSource = taskNames;
-            listActivities.ItemsSource = taskNames;
+            listActivities.ItemsSource = uncompletedTaskNames;
+            historyActivities.ItemsSource = completedTaskNames;
         }
         
         private void btnDeleteTask_Click(object sender, RoutedEventArgs e)
@@ -186,6 +187,11 @@ namespace Momo.presentation.home
             {
                 MessageBox.Show("Failed to delete all tasks.");
             }
+        }
+
+        private void listActivities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
