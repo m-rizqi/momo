@@ -10,9 +10,7 @@ namespace Momo.data.datasource.database
 {
     public class DatabaseService
     {
-       // private readonly string connectionString = "Host=172.188.65.129;Port=5432;Username=postgres;Password=postgres;Database=momo";
-       // private readonly string connectionString = "Host=pom.db.elephantsql.com;Port=5432;Username=ttgtnlzi;Password=YO8MtrqDwrdzGGws1ibDUnwwsDAHXX56;Database=ttgtnlzi";
-       private readonly string connectionString = "Host=192.168.18.36;Port=5432;Username=nathan;Password=190902;Database=momo";
+        private readonly string connectionString = "Host=rain.db.elephantsql.com;Port=5432;Username=ctljksqc;Password=6jleg37ZblqukOyCaxjE4FGHpw5HXXdv;Database=ctljksqc";
 
         private readonly NpgsqlConnection _connection;
 

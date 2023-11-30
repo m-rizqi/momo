@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Momo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f91607c139f1c137841046831c154c4aee9db04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac8fc6af870244adb36fb441983e28b85aeeb8fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Momo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Momo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

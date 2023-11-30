@@ -12,7 +12,7 @@
     <Grid>
         <TextBlock x:Name="lblPomodoroTimer" HorizontalAlignment="Left" Margin="440,55,0,0" TextWrapping="Wrap" Text="25:00" VerticalAlignment="Top" FontSize="72" FontFamily="Tw Cen MT"/>
         <TextBlock HorizontalAlignment="Left" Margin="12,5,0,0" TextWrapping="Wrap" Text="Listed Activities" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
-        <ListBox x:Name="listActivities" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,26,551,233"/>
+        <ListBox x:Name="listActivities" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,26,551,233" SelectionChanged="listActivities_SelectionChanged"/>
         <TextBox x:Name="txtActivity" HorizontalAlignment="Left" Margin="282,228,0,0" TextWrapping="Wrap" Text="Lorem Ipsum" VerticalAlignment="Top" Width="438" Height="24" FontFamily="Tw Cen MT" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="282,205,0,0" TextWrapping="Wrap" Text="Add Activity" VerticalAlignment="Top" FontFamily="Tw Cen MT" FontSize="14"/>
         <Button x:Name="btnAdd" HorizontalAlignment="Left" Margin="725,228,0,0" VerticalAlignment="Top" Height="24" Click="Button_Click" HorizontalContentAlignment="Center">
